@@ -1,0 +1,53 @@
+<mujoco model="firefighter">
+    <compiler angle="radian" meshdir="../meshes_mujoco/" />
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <mesh name="joint1_jet" file="joint1_jet.stl" />
+        <mesh name="joint2" file="joint2.stl" />
+        <mesh name="joint3" file="joint3.stl" />
+        <mesh name="joint4" file="joint4.stl" />
+        <mesh name="joint5" file="joint5.stl" />
+        <mesh name="joint6" file="joint6.stl" />
+        <mesh name="joint7" file="joint7.stl" />
+    </asset>
+    <worldbody>
+        <geom quat="0.000796327 0 0 1" type="mesh" contype="0" conaffinity="0" group="1" mesh="joint1_jet" />
+        <geom quat="0.000796327 0 0 1" type="mesh" mesh="joint1_jet" />
+        <body name="joint2" pos="0 0 0.15756">
+            <inertial pos="-4.46252e-07 -0.0048982 -0.0203936" quat="0.988685 0.150004 1.75753e-05 -6.19332e-05" mass="0.153266" diaginertia="0.00010997 0.000104609 4.89092e-05" />
+            <joint name="joint2_to_joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.9321 2.9321" />
+            <geom pos="0 0 -0.06096" quat="0.707105 0 0 -0.707108" type="mesh" contype="0" conaffinity="0" group="1" mesh="joint2" />
+            <geom pos="0 0 -0.06096" quat="0.707105 0 0 -0.707108" type="mesh" mesh="joint2" />
+            <body name="joint3" pos="0 0 -0.001" quat="0.499998 0.500002 0.5 -0.5">
+                <inertial pos="-0.0548658 -3.79418e-06 0.0581352" quat="0.50338 0.49662 0.497294 0.502669" mass="0.4" diaginertia="0.000569683 0.000554829 8.82752e-05" />
+                <joint name="joint3_to_joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0943 2.0943" />
+                <geom pos="0 0 0.03256" quat="0.707105 0 -0.707108 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="joint3" />
+                <geom pos="0 0 0.03256" quat="0.707105 0 -0.707108 0" type="mesh" mesh="joint3" />
+                <body name="joint4" pos="-0.1104 0 0">
+                    <inertial pos="-0.0454441 4.51021e-07 0.00478273" quat="0.508392 0.491471 0.491339 0.508508" mass="0.219069" diaginertia="0.000359328 0.000340078 6.35956e-05" />
+                    <joint name="joint4_to_joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.6179 2.6179" />
+                    <geom pos="0 0 0.03056" quat="0.707105 0 -0.707108 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="joint4" />
+                    <geom pos="0 0 0.03056" quat="0.707105 0 -0.707108 0" type="mesh" mesh="joint4" />
+                    <body name="joint5" pos="-0.096 0 0.06462" quat="0.707105 0 0 -0.707108">
+                        <inertial pos="1.49997e-05 -0.00761485 -0.00688111" quat="0.903244 0.429125 -0.00118023 0.00112811" mass="0.0576212" diaginertia="1.88765e-05 1.81573e-05 1.0565e-05" />
+                        <joint name="joint5_to_joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-2.5307 2.5307" />
+                        <geom pos="0 0 -0.03356" quat="0.707105 -0.707108 0 0" type="mesh" contype="0" conaffinity="0" group="1" mesh="joint5" />
+                        <geom pos="0 0 -0.03356" quat="0.707105 -0.707108 0 0" type="mesh" mesh="joint5" />
+                        <body name="joint6" pos="0 -0.07318 0" quat="0.499998 0.5 -0.5 0.500002">
+                            <inertial pos="-3.34552e-08 0.00487808 -0.00751659" quat="0.395895 0.918296 6.92557e-06 2.44425e-06" mass="0.0904837" diaginertia="4.06947e-05 3.23387e-05 2.57661e-05" />
+                            <joint name="joint6_to_joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8797 2.8797" />
+                            <geom pos="0 0 -0.038" type="mesh" contype="0" conaffinity="0" group="1" mesh="joint6" />
+                            <geom pos="0 0 -0.038" type="mesh" mesh="joint6" />
+                            <body name="joint6_flange" pos="0 0.0456 0" quat="0.707105 -0.707108 0 0">
+                                <inertial pos="-6.68861e-07 -1.54403e-07 -0.00514555" quat="0.276336 0.650875 -0.27633 0.650877" mass="0.0121397" diaginertia="1.94827e-06 1.13494e-06 1.13491e-06" />
+                                <joint name="joint7_to_joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14159" />
+                                <geom pos="0 0 -0.012" type="mesh" contype="0" conaffinity="0" group="1" mesh="joint7" />
+                                <geom pos="0 0 -0.012" type="mesh" mesh="joint7" />
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>
